@@ -47,7 +47,7 @@ const Projects = ({ variants, transition }) => {
     hidden: { opacity: 1 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: 0.5 }
+      transition: { staggerChildren: 0.5, delayChildren: 0.5 }
     }
   };
 

@@ -10,23 +10,27 @@ const skills = {
 };
 
 const About = ({ variants, transition }) => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
+  // Variant for the container card itself (fade in and up)
+  const categoryContainerVariant = {
+    hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
+      y: 0,
       transition: {
-        staggerChildren: 0.3, // Stagger the children's animation
-        delayChildren: 0.2   // Add a slight delay before the children start animating
+        duration: 0.5,
+        // This is key: delay the staggering of children until the container is visible
+        delayChildren: 0.3,
+        staggerChildren: 0.1
       }
     }
   };
 
-  const itemVariants = {
+  // Variant for the list items inside the card
+  const listItemVariant = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
-      transition: { type: 'spring', stiffness: 100 }
     }
   };
 
@@ -40,12 +44,13 @@ const About = ({ variants, transition }) => {
       transition={transition}
     >
       <h1 className={styles.title}>About Me</h1>
+      {/* --- Intro Section remains unchanged --- */}
       <div className={styles.introContent}>
         <motion.div
           className={styles.imageContainer}
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3, delay: 0.8 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
         >
           <img src="/profile-placeholder.jpg" alt="Leonard Rabih Marida" className={styles.profileImage} />
         </motion.div>
@@ -63,43 +68,65 @@ const About = ({ variants, transition }) => {
           </p>
         </motion.div>
       </div>
-
+      
+      {/* --- Skills Section with Corrected Animation --- */}
       <div className={styles.skillsSection}>
         <h2 className={styles.skillsTitle}>My Technical Toolbox</h2>
-        
         <div className={styles.skillsGrid}>
-        {/* Here's where the animation trigger resides - The whole section should appear while you scroll */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }} // Trigger when 20% is visible
-          variants={containerVariants} // Use the container variant to stagger children
-        >
-          <div className={styles.skillCategory}>
+          
+          {/* Each category is now its own animated container */}
+          <motion.div
+            className={styles.skillCategory}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={categoryContainerVariant}
+          >
             <h3>Languages</h3>
             <ul>
-              {skills.languages.map(skill => <motion.li key={skill} variants={itemVariants}>{skill}</motion.li>)}
+              {skills.languages.map(skill => <motion.li key={skill} variants={listItemVariant}>{skill}</motion.li>)}
             </ul>
-          </div>
-          <div className={styles.skillCategory}>
+          </motion.div>
+          
+          <motion.div
+            className={styles.skillCategory}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={categoryContainerVariant}
+          >
             <h3>Frameworks & Libraries</h3>
             <ul>
-              {skills.frameworks.map(skill => <motion.li key={skill} variants={itemVariants}>{skill}</motion.li>)}
+              {skills.frameworks.map(skill => <motion.li key={skill} variants={listItemVariant}>{skill}</motion.li>)}
             </ul>
-          </div>
-          <div className={styles.skillCategory}>
+          </motion.div>
+
+          <motion.div
+            className={styles.skillCategory}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={categoryContainerVariant}
+          >
             <h3>Databases & Storage</h3>
             <ul>
-              {skills.databases.map(skill => <motion.li key={skill} variants={itemVariants}>{skill}</motion.li>)}
+              {skills.databases.map(skill => <motion.li key={skill} variants={listItemVariant}>{skill}</motion.li>)}
             </ul>
-          </div>
-          <div className={styles.skillCategory}>
+          </motion.div>
+
+          <motion.div
+            className={styles.skillCategory}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={categoryContainerVariant}
+          >
             <h3>Tools & Technologies</h3>
             <ul>
-              {skills.tools.map(skill => <motion.li key={skill} variants={itemVariants}>{skill}</motion.li>)}
+              {skills.tools.map(skill => <motion.li key={skill} variants={listItemVariant}>{skill}</motion.li>)}
             </ul>
-          </div>
-           </motion.div>
+          </motion.div>
+
         </div>
       </div>
     </motion.div>
