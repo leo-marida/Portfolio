@@ -11,10 +11,11 @@
   color: var(--text-color);
 }
 
-.content {
+.introContent {
   display: flex;
   align-items: center;
   gap: 3rem;
+  margin-bottom: 5rem; /* Increased margin to create space for the skills section */
 }
 
 .imageContainer {
@@ -41,8 +42,66 @@
   margin-bottom: 0;
 }
 
+/* --- NEW STYLES FOR THE SKILLS SECTION --- */
+
+.skillsSection {
+  text-align: center;
+}
+
+.skillsTitle {
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
+  color: var(--text-color);
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2.5rem;
+  text-align: left;
+}
+
+.skillCategory {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1.5rem;
+  backdrop-filter: blur(5px);
+}
+
+.skillCategory h3 {
+  font-size: 1.4rem;
+  color: var(--primary-glow);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.skillCategory ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skillCategory li {
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+/* Creates the custom bullet point */
+.skillCategory li::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  color: var(--primary-glow);
+  font-size: 0.8rem;
+  top: 5px;
+}
+
+
 @media (max-width: 768px) {
-  .content {
+  .introContent {
     flex-direction: column;
     text-align: center;
   }
