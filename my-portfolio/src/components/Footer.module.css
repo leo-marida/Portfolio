@@ -1,0 +1,29 @@
+.footer {
+  padding: 2rem 5%;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  margin-top: 4rem;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.socialLinks a {
+  color: var(--text-muted);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.socialLinks a:hover {
+  color: var(--primary-glow);
+  transform: translateY(-3px);
+}
+
+.footer p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}

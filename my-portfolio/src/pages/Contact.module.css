@@ -1,0 +1,111 @@
+.contactContainer {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  position: relative;
+}
+
+.contactForm input,
+.contactForm textarea {
+  width: 100%;
+  padding: 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  border-radius: 5px;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contactForm input:focus,
+.contactForm textarea:focus {
+  outline: none;
+  border-color: var(--primary-glow);
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+}
+
+.errorInput {
+  border-color: #ff4d4d;
+}
+
+.errorMessage {
+  color: #ff4d4d;
+  font-size: 0.8rem;
+  position: absolute;
+  left: 10px;
+  bottom: -20px;
+}
+
+
+.submitButton {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--bg-color);
+  background: var(--primary-glow);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
+}
+
+.submitButton:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 25px rgba(0, 191, 255, 0.6);
+}
+
+.submitButton:disabled {
+  background: var(--text-muted);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.statusMessage {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 5px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.success {
+  background-color: rgba(45, 211, 111, 0.1);
+  color: #2dd36f;
+  border: 1px solid #2dd36f;
+}
+
+.error {
+  background-color: rgba(235, 68, 90, 0.1);
+  color: #eb445a;
+  border: 1px solid #eb445a;
+}
