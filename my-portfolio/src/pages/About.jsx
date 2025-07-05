@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './About.module.css';
-// The image is now in the public folder, so we don't need to import it.
 
 const skills = {
   languages: ['Java', 'Python', 'JavaScript (ES6+)', 'TypeScript', 'SQL', 'HTML5', 'CSS3'],
@@ -15,7 +14,10 @@ const About = ({ variants, transition }) => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1 }
+      transition: {
+        staggerChildren: 0.3, // Stagger the children's animation
+        delayChildren: 0.2   // Add a slight delay before the children start animating
+      }
     }
   };
 
@@ -24,7 +26,7 @@ const About = ({ variants, transition }) => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { type: 'spring' }
+      transition: { type: 'spring', stiffness: 100 }
     }
   };
 
@@ -43,7 +45,7 @@ const About = ({ variants, transition }) => {
           className={styles.imageContainer}
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
+          transition={{ duration: 0.3, delay: 0.8 }}
         >
           <img src="/profile-placeholder.jpg" alt="Leonard Rabih Marida" className={styles.profileImage} />
         </motion.div>
@@ -64,31 +66,40 @@ const About = ({ variants, transition }) => {
 
       <div className={styles.skillsSection}>
         <h2 className={styles.skillsTitle}>My Technical Toolbox</h2>
+        
         <div className={styles.skillsGrid}>
-          <motion.div className={styles.skillCategory} variants={containerVariants} initial="hidden" animate="visible">
+        {/* Here's where the animation trigger resides - The whole section should appear while you scroll */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }} // Trigger when 20% is visible
+          variants={containerVariants} // Use the container variant to stagger children
+        >
+          <div className={styles.skillCategory}>
             <h3>Languages</h3>
             <ul>
               {skills.languages.map(skill => <motion.li key={skill} variants={itemVariants}>{skill}</motion.li>)}
             </ul>
-          </motion.div>
-          <motion.div className={styles.skillCategory} variants={containerVariants} initial="hidden" animate="visible">
+          </div>
+          <div className={styles.skillCategory}>
             <h3>Frameworks & Libraries</h3>
             <ul>
               {skills.frameworks.map(skill => <motion.li key={skill} variants={itemVariants}>{skill}</motion.li>)}
             </ul>
-          </motion.div>
-          <motion.div className={styles.skillCategory} variants={containerVariants} initial="hidden" animate="visible">
+          </div>
+          <div className={styles.skillCategory}>
             <h3>Databases & Storage</h3>
             <ul>
               {skills.databases.map(skill => <motion.li key={skill} variants={itemVariants}>{skill}</motion.li>)}
             </ul>
-          </motion.div>
-          <motion.div className={styles.skillCategory} variants={containerVariants} initial="hidden" animate="visible">
+          </div>
+          <div className={styles.skillCategory}>
             <h3>Tools & Technologies</h3>
             <ul>
               {skills.tools.map(skill => <motion.li key={skill} variants={itemVariants}>{skill}</motion.li>)}
             </ul>
-          </motion.div>
+          </div>
+           </motion.div>
         </div>
       </div>
     </motion.div>
