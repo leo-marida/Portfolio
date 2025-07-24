@@ -4,7 +4,7 @@ import styles from './About.module.css';
 
 const skills = {
   languages: ['Java', 'Python', 'JavaScript (ES6+)', 'TypeScript', 'SQL', 'HTML5', 'CSS3'],
-  frameworks: ['React', 'Spring Boot', 'Node.js', 'React Native', 'Vue.js', 'Nuxt.js', 'Framer Motion'],
+  frameworks: ['React', 'Spring Boot', 'Node.js', 'React Native', 'Vue.js', 'Nuxt.js','Next.js', 'Framer Motion'],
   databases: ['PostgreSQL', 'MySQL', 'Oracle SQL', 'Firebase'],
   tools: ['Git', 'Vercel (CI/CD)', 'Docker (Familiarity)', 'Agile Methodologies', 'REST APIs']
 };
@@ -61,7 +61,7 @@ const About = ({ variants, transition }) => {
           transition={{ duration: 0.5, delay: 1.0 }}
         >
           <p>
-            I am a detail-oriented Computer Science student with a passion for turning complex problems into elegant, user-centric software solutions. With over three years of hands-on experience in full-stack development, I have honed my abilities across a wide range of modern technologies.
+            Possesses over 3 years of hands-on experience in full-stack and mobile development, with specialized expertise in building and deploying cross-platform applications from scratch.
           </p>
           <p>
             My journey into tech began with a curiosity for how things work, which quickly evolved into building applications that people can interact with and enjoy. I thrive in collaborative environments and am driven by a philosophy of continuous learning and improvement.
