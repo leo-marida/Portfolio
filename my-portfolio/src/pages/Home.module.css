@@ -1,12 +1,40 @@
+/*
+  Change the layout to a column, stacking items vertically.
+  justify-content: center will center them vertically in the available space.
+*/
 .homeContainer {
   display: flex;
+  flex-direction: column; /* This is the key change */
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 150px); /* Adjust based on header/footer height */
+  min-height: calc(100vh - 150px);
+  padding: 2rem 5%;
   text-align: center;
-  padding: 0 5%;
 }
 
+/* This container no longer needs special positioning */
+.content {
+  max-width: 650px; /* Constrain the width of the text */
+}
+
+/* 
+  NEW STYLES FOR THE MODEL CONTAINER
+  This is crucial. A canvas in the normal page flow needs an explicit size.
+*/
+.modelContainer {
+  width: 100%;
+  max-width: 600px; /* Match the content width for alignment */
+  height: 450px;
+  margin-top: 2rem; /* Add some space between the button and the model */
+  cursor: grab; /* Change the cursor to indicate it's interactive */
+}
+
+.modelContainer:active {
+  cursor: grabbing; /* Change cursor on click-and-drag */
+}
+
+
+/* All your previous content styles are still valid! */
 .content h1 {
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   color: var(--text-color);

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './About.module.css';
+import ShowcaseModel from '../components/ShowcaseModel'; // 1. IMPORT THE MODEL
 
 const skills = {
   languages: ['Java', 'Python', 'JavaScript (ES6+)', 'TypeScript', 'SQL', 'HTML5', 'CSS3'],
@@ -10,7 +11,6 @@ const skills = {
 };
 
 const About = ({ variants, transition }) => {
-  // Variant for the container card itself (fade in and up)
   const categoryContainerVariant = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -18,19 +18,27 @@ const About = ({ variants, transition }) => {
       y: 0,
       transition: {
         duration: 0.5,
-        // This is key: delay the staggering of children until the container is visible
         delayChildren: 0.3,
         staggerChildren: 0.1
       }
     }
   };
 
-  // Variant for the list items inside the card
   const listItemVariant = {
     hidden: { y: 20, opacity: 0 },
+    visible: { y: 0, opacity: 1, }
+  };
+
+  // 2. A NEW VARIANT FOR THE 3D MODEL CONTAINER
+  const modelVariant = {
+    hidden: { opacity: 0, scale: 0.8 },
     visible: {
-      y: 0,
       opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.7,
+        delay: 0.5 // Let it appear after the text
+      }
     }
   };
 
@@ -44,7 +52,7 @@ const About = ({ variants, transition }) => {
       transition={transition}
     >
       <h1 className={styles.title}>About Me</h1>
-      {/* --- Intro Section remains unchanged --- */}
+      
       <div className={styles.introContent}>
         <motion.div
           className={styles.imageContainer}
@@ -52,7 +60,7 @@ const About = ({ variants, transition }) => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.8 }}
         >
-          <img src="/profile-placeholder.jpg" alt="Leonard Rabih Marida" className={styles.profileImage} />
+          <img src="/leo_image.jpg" alt="Leonard Rabih Marida" className={styles.profileImage} />
         </motion.div>
         <motion.div
           className={styles.textContainer}
@@ -66,15 +74,27 @@ const About = ({ variants, transition }) => {
           <p>
             My journey into tech began with a curiosity for how things work, which quickly evolved into building applications that people can interact with and enjoy. I thrive in collaborative environments and am driven by a philosophy of continuous learning and improvement.
           </p>
+          <p>
+            My three-year dedication to bodybuilding has cultivated a mindset that directly enhances my approach to software engineering. I bring the same principles of structure and perseverance from the gym to my code
+          </p>
         </motion.div>
       </div>
       
-      {/* --- Skills Section with Corrected Animation --- */}
+      {/* 3. PLACE THE MODEL CONTAINER HERE */}
+      <motion.div
+        className={styles.modelContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={modelVariant}
+      >
+        <ShowcaseModel />
+      </motion.div>
+      
       <div className={styles.skillsSection}>
         <h2 className={styles.skillsTitle}>My Technical Toolbox</h2>
         <div className={styles.skillsGrid}>
-          
-          {/* Each category is now its own animated container */}
+          {/* Languages */}
           <motion.div
             className={styles.skillCategory}
             initial="hidden"
@@ -83,11 +103,9 @@ const About = ({ variants, transition }) => {
             variants={categoryContainerVariant}
           >
             <h3>Languages</h3>
-            <ul>
-              {skills.languages.map(skill => <motion.li key={skill} variants={listItemVariant}>{skill}</motion.li>)}
-            </ul>
+            <ul>{skills.languages.map(skill => <motion.li key={skill} variants={listItemVariant}>{skill}</motion.li>)}</ul>
           </motion.div>
-          
+          {/* Frameworks */}
           <motion.div
             className={styles.skillCategory}
             initial="hidden"
@@ -96,11 +114,9 @@ const About = ({ variants, transition }) => {
             variants={categoryContainerVariant}
           >
             <h3>Frameworks & Libraries</h3>
-            <ul>
-              {skills.frameworks.map(skill => <motion.li key={skill} variants={listItemVariant}>{skill}</motion.li>)}
-            </ul>
+            <ul>{skills.frameworks.map(skill => <motion.li key={skill} variants={listItemVariant}>{skill}</motion.li>)}</ul>
           </motion.div>
-
+          {/* Databases */}
           <motion.div
             className={styles.skillCategory}
             initial="hidden"
@@ -109,11 +125,9 @@ const About = ({ variants, transition }) => {
             variants={categoryContainerVariant}
           >
             <h3>Databases & Storage</h3>
-            <ul>
-              {skills.databases.map(skill => <motion.li key={skill} variants={listItemVariant}>{skill}</motion.li>)}
-            </ul>
+            <ul>{skills.databases.map(skill => <motion.li key={skill} variants={listItemVariant}>{skill}</motion.li>)}</ul>
           </motion.div>
-
+          {/* Tools */}
           <motion.div
             className={styles.skillCategory}
             initial="hidden"
@@ -122,11 +136,8 @@ const About = ({ variants, transition }) => {
             variants={categoryContainerVariant}
           >
             <h3>Tools & Technologies</h3>
-            <ul>
-              {skills.tools.map(skill => <motion.li key={skill} variants={listItemVariant}>{skill}</motion.li>)}
-            </ul>
+            <ul>{skills.tools.map(skill => <motion.li key={skill} variants={listItemVariant}>{skill}</motion.li>)}</ul>
           </motion.div>
-
         </div>
       </div>
     </motion.div>
