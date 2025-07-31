@@ -6,9 +6,17 @@ import styles from "./Projects.module.css";
 // Project data now includes all projects from your resume, ordered strategically.
 const projectsData = [
   {
+    title: "Equipment Manager Mobile App",
+    description:
+      "Owned the full product lifecycle for over 3 years, taking the app from initial concept to launch to continuous, long-term maintenance for a local mechanic to track equipment inventory, availability, and service history, as well as reducing manual check times by 50%.",
+    technologies: ["React Native", "JavaScript", "Firebase"],
+    liveLink: "#",
+    githubLink: "https://github.com/leo-marida/Mechanic-App",
+  },
+  {
     title: "Travel Agency Platform",
     description:
-      "Architected a full-stack, dual-portal web application for users and service providers, enabling dynamic service listings and secure booking management.",
+      "Architected a full-stack, tripal-portal web application for users, admins, and service providers, enabling dynamic service listings and secure booking management.",
     technologies: ["React", "Spring Boot", "Java", "PostgreSQL", "REST APIs"],
     liveLink: "#", // Replace with your live demo link
     githubLink: "https://github.com/leo-marida/Grand-Voyage", // Replace with your GitHub repo link
@@ -16,7 +24,7 @@ const projectsData = [
   {
     title: "Slova AI - Automation Agency Platform",
     description:
-      "Architected and deployed a full-stack, client-facing website for a solo AI automation agency, featuring a dynamic portfolio, a multi-niche service menu, and an interactive AI chatbot built with a custom backend workflow.",
+      "Architected a full-stack, client-facing website for a solo AI automation agency, featuring a multi-niche service menu, and an interactive AI chatbot built with a custom backend workflow.",
     technologies: [
       "Next.js",
       "React",
@@ -35,14 +43,6 @@ const projectsData = [
     technologies: ["PHP", "MySQL", "JavaScript", "AJAX", "HTML5", "CSS3"],
     liveLink: "#",
     githubLink: "https://github.com/leo-marida/SurgeMotors",
-  },
-  {
-    title: "Equipment Manager Mobile App",
-    description:
-      "Developed and launched a cross-platform mobile application for a local mechanic to track equipment inventory, availability, and service history, reducing manual check times by 50%.",
-    technologies: ["React Native", "JavaScript", "Firebase"],
-    liveLink: "#",
-    githubLink: "https://github.com/leo-marida/Mechanic-App",
   },
   {
     title: "Secure Password Manager",
