@@ -5,9 +5,9 @@ import ShowcaseModel from '../components/ShowcaseModel'; // 1. IMPORT THE MODEL
 
 const skills = {
   languages: ['Java', 'Python', 'JavaScript (ES6+)', 'TypeScript', 'SQL', 'HTML5', 'CSS3'],
-  frameworks: ['React', 'Spring Boot', 'Node.js', 'React Native', 'Vue.js', 'Nuxt.js','Next.js', 'Framer Motion'],
+  frameworks: ['React', 'Spring Boot', 'React Native', 'Vue.js', 'Nuxt.js','Next.js', 'Three,js', 'JQuery' ,'Framer Motion'],
   databases: ['PostgreSQL', 'MySQL', 'Oracle SQL', 'Firebase'],
-  tools: ['Git', 'Vercel (CI/CD)', 'Docker (Familiarity)', 'Agile Methodologies', 'REST APIs']
+  tools: ['Git', 'Node.js','Vercel (CI/CD)', 'Docker (Familiarity)', 'Agile Methodologies', 'REST APIs', 'JSON', 'XML', 'JSx']
 };
 
 const About = ({ variants, transition }) => {
