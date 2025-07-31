@@ -37,7 +37,7 @@ const Home = ({ variants, transition }) => {
         <motion.h1 variants={itemVariants}>Leonard Rabih Marida</motion.h1>
         <motion.h2 variants={itemVariants}>Full-Stack Developer & Creative Problem-Solver</motion.h2>
         <motion.p variants={itemVariants}>
-          I build dynamic, user-centric web applications with a focus on clean code and stunning design.
+          I build dynamic, full stack mobile and web applications with a focus on clean code and professional design and quality.
         </motion.p>
         <motion.div variants={itemVariants}>
           <Link to="/projects" className={styles.ctaButton}>
