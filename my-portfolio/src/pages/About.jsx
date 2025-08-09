@@ -69,13 +69,13 @@ const About = ({ variants, transition }) => {
           transition={{ duration: 0.5, delay: 1.0 }}
         >
           <p>
-            Possesses over 3 years of hands-on experience in full-stack and mobile development, with specialized expertise in building and deploying cross-platform applications from scratch.
+            Possesses over 3 years of experience in full-stack web and mobile developmentoying cross-platform applications from scratch.
           </p>
           <p>
-            My journey into tech began with a curiosity for how things work, which quickly evolved into building applications that people can interact with and enjoy. I thrive in collaborative environments and am driven by a philosophy of continuous learning and improvement.
+            My journey into tech began with a curiosity for how things work, which quickly evolved into helping people building applications they can enjoy. <br></br>I also enjoy continuous learning as well as teamwork.
           </p>
           <p>
-            My three-year dedication to bodybuilding has cultivated a mindset that directly enhances my approach to software engineering. I bring the same principles of structure and perseverance from the gym to my code
+            Additionally, My dedication to bodybuilding instills a mindset I apply directly to software engineering.
           </p>
         </motion.div>
       </div>

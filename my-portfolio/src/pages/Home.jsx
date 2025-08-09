@@ -34,11 +34,12 @@ const Home = ({ variants, transition }) => {
       {/* This container for the text content no longer needs its own variants,
           as the parent `homeContainer` is handling the stagger effect. */}
       <div className={styles.content}>
-        <motion.h1 variants={itemVariants}>Leonard Rabih Marida</motion.h1>
-        <motion.h2 variants={itemVariants}>Junior Software Developer</motion.h2>
+        <motion.h1 variants={itemVariants}>
+          Leonard Rabih Marida
+        </motion.h1>
+
         <motion.p variants={itemVariants}>
-          3+ years of experience building high-quality, performant web applications with a focus on 
-exceptional customer experience. I specialize in the modern web stack, and have a proven track record of owning features from inception to launch in fast-paced, innovative environments.
+          Junior Software Developer with 3+ years of experience building, deploying, and maintaining robust, high-performance web and mobile applications from concept to launch.
         </motion.p>
         <motion.div variants={itemVariants}>
           <Link to="/projects" className={styles.ctaButton}>
