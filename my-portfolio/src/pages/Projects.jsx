@@ -9,15 +9,31 @@ const projectsData = [
     title: "Equipment Manager Mobile App",
     description:
       "Owned the full product lifecycle for over 3 years, taking the app from initial concept to launch to continuous, long-term maintenance for a local mechanic to track equipment inventory, availability, and service history, as well as reducing manual check times by 50%.",
-    technologies: ["React Native", "JavaScript", "Firebase"],
+    technologies: ["React Native", "JavaScript", "Firebase", "Product Lifecycle Management", "Application Performance Optimization"],
     liveLink: "#",
     githubLink: "https://github.com/leo-marida/Mechanic-App",
+  },
+  {
+    title: "AI Road Tracking System",
+    description:
+      "Engineered a high-fidelity, real-time multi-object tracking (MOT) system by custom-training a YOLOv5 model on a large-scale Roboflow dataset and integrating it with a Norfair tracker, achieving exceptional robustness in identifying vehicles across complex and varied driving conditions.",
+    technologies: ["Python", "Deepsort", "Supervised Learning", "Modal Generalization", "Norfair"],
+    liveLink: "#",
+    githubLink: "https://github.com/leo-marida/AI-Road-Tracking-System",
+  },
+  {
+    title: "Full stack developer intern at Greatech",
+    description:
+      "As a Full Stack Developer Intern, I elevated the Actifit.io platform by developing key front-end features in Nuxt.js, boosting mobile responsiveness by 25% and resolving over 15 UI bugs to significantly enhance user engagement and overall application performance.",
+    technologies: ["Nuxt.js", "Vue.js", "JavaScript", "UI Bug Resolution", "REST APIs", "Mobile Responsiveness"],
+    liveLink: "actifit.io",
+    githubLink: "https://github.com/leo-marida/AI-Road-Tracking-System",
   },
   {
     title: "Travel Agency Platform",
     description:
       "Architected a full-stack, tripal-portal web application for users, admins, and service providers, enabling dynamic service listings and secure booking management.",
-    technologies: ["React", "Spring Boot", "Java", "PostgreSQL", "REST APIs"],
+    technologies: ["React.js", "Spring Boot", "Java", "PostgreSQL", "REST APIs", "Secure User Authentication"],
     liveLink: "#", // Replace with your live demo link
     githubLink: "https://github.com/leo-marida/Grand-Voyage", // Replace with your GitHub repo link
   },
@@ -51,15 +67,7 @@ const projectsData = [
     technologies: ["Java", "XML", "MySQL", "Android SDK"],
     liveLink: "#",
     githubLink: "https://github.com/leo-marida/SafePass",
-  },
-  {
-    title: "RISC Processor Simulation",
-    description:
-      "Developed a software simulation of a simplified RISC processor, demonstrating a foundational understanding of CPU architecture, instruction cycles, and memory handling.",
-    technologies: ["C", "Assembly", "Computer Architecture"],
-    liveLink: "#",
-    githubLink: "#",
-  },
+  }
 ];
 
 const Projects = ({ variants, transition }) => {
