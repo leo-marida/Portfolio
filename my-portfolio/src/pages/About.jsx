@@ -69,13 +69,15 @@ const About = ({ variants, transition }) => {
           transition={{ duration: 0.5, delay: 1.0 }}
         >
           <p>
-            Possesses over 3 years of experience in full-stack web and mobile developmentoying cross-platform applications from scratch.
+            Possesses over 3 years of experience in full-stack web and mobile developing cross-platform applications from scratch.
           </p>
+          <br></br>
           <p>
             My journey into tech began with a curiosity for how things work, which quickly evolved into helping people building applications they can enjoy. <br></br>I also enjoy continuous learning as well as teamwork.
           </p>
+          <br></br>
           <p>
-            Additionally, My dedication to bodybuilding instills a mindset I apply directly to software engineering.
+            Additionally, my dedication to bodybuilding instills a mindset I apply directly to software engineering.
           </p>
         </motion.div>
       </div>
