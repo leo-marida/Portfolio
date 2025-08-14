@@ -39,7 +39,7 @@ const Home = ({ variants, transition }) => {
         </motion.h1>
 
         <motion.p variants={itemVariants}>
-          Junior Software Developer with 3+ years of experience building, deploying, and maintaining robust, high-performance web and mobile applications from concept to launch.
+          Software Developer with 3+ years of experience building, deploying, and maintaining robust, high-performance web and mobile applications from concept to launch.
         </motion.p>
         <motion.div variants={itemVariants}>
           <Link to="/projects" className={styles.ctaButton}>

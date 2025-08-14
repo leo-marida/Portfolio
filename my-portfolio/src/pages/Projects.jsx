@@ -9,7 +9,13 @@ const projectsData = [
     title: "Equipment Manager Mobile App",
     description:
       "Owned the full product lifecycle for over 3 years, taking the app from initial concept to launch to continuous, long-term maintenance for a local mechanic to track equipment inventory.",
-    technologies: ["React Native", "JavaScript", "Firebase", "Product Lifecycle Management", "Application Performance Optimization"],
+    technologies: [
+      "React Native",
+      "JavaScript",
+      "Firebase",
+      "Product Lifecycle Management",
+      "Application Performance Optimization",
+    ],
     liveLink: "#",
     githubLink: "https://github.com/leo-marida/Mechanic-App",
   },
@@ -17,6 +23,13 @@ const projectsData = [
     title: "AI Road Tracking System",
     description:
       "Engineered a real-time multi-object tracking system by custom-training a YOLOv5 model on a Roboflow dataset and integrating it with a Norfair tracker",
+    technologies: [
+      "Supervised Learning",
+      "Deepsort",
+      "Python",
+      "Model Generalization",
+      "Norfair",
+    ],
     liveLink: "#",
     githubLink: "https://github.com/leo-marida/AI-Road-Tracking-System",
   },
@@ -24,7 +37,14 @@ const projectsData = [
     title: "Full stack developer intern at Greatech",
     description:
       "As a Full Stack Developer Intern, I elevated the Actifit.io platform by developing key front-end features in Nuxt.js, boosting mobile responsiveness by 25% and resolving over 15 UI bugs to enhance user engagement and overall application performance.",
-    technologies: ["Nuxt.js", "Vue.js", "JavaScript", "UI Bug Resolution", "REST APIs", "Mobile Responsiveness"],
+    technologies: [
+      "Nuxt.js",
+      "Vue.js",
+      "JavaScript",
+      "UI Bug Resolution",
+      "REST APIs",
+      "Mobile Responsiveness",
+    ],
     liveLink: "actifit.io",
     githubLink: "https://github.com/leo-marida/AI-Road-Tracking-System",
   },
@@ -47,7 +67,14 @@ const projectsData = [
     title: "Travel Agency Platform",
     description:
       "Architected a full-stack, tripal-portal web application for users, admins, and service providers, enabling dynamic service listings and secure booking management.",
-    technologies: ["React.js", "Spring Boot", "Java", "PostgreSQL", "REST APIs", "Secure User Authentication"],
+    technologies: [
+      "React.js",
+      "Spring Boot",
+      "Java",
+      "PostgreSQL",
+      "REST APIs",
+      "Secure User Authentication",
+    ],
     liveLink: "#", // Replace with your live demo link
     githubLink: "https://github.com/leo-marida/Grand-Voyage", // Replace with your GitHub repo link
   },
@@ -66,7 +93,7 @@ const projectsData = [
     technologies: ["Java", "XML", "MySQL", "Android SDK"],
     liveLink: "#",
     githubLink: "https://github.com/leo-marida/SafePass",
-  }
+  },
 ];
 
 const Projects = ({ variants, transition }) => {
