@@ -34,7 +34,7 @@ const projectsData = [
     githubLink: "https://github.com/leo-marida/AI-Road-Tracking-System",
   },
   {
-    title: "Full stack developer intern at Greatech",
+    title: "Full stack developer at Greatech",
     description:
       "As a Full Stack Developer Intern, I elevated the Actifit.io platform by developing key front-end features in Nuxt.js, boosting mobile responsiveness by 25% and resolving over 15 UI bugs to enhance user engagement and overall application performance.",
     technologies: [
@@ -62,6 +62,20 @@ const projectsData = [
     ],
     liveLink: "https://slovaautomations.com", // <-- IMPORTANT: Replace with your final domain
     githubLink: "https://github.com/leo-marida/Automation-agency", // <-- IMPORTANT: Replace with your actual GitHub repo link
+  },
+  {
+    title: "Full stack developer at IDS",
+    description:
+      "As a full stack developer intern, I developed a comprehensive event management web application using ASP.NET Core, Entity Framework, and Microsoft SQL Server to power a Web API for real-time management of events, members, and admin functionalities.",
+    technologies: [
+      "ASP.NET MVC",
+      "C#",
+      "Microsoft SQL Server",
+      ".NET Framework",
+      "Real-time Management",
+    ],
+    liveLink: "actifit.io",
+    githubLink: "",
   },
   {
     title: "Travel Agency Platform",
