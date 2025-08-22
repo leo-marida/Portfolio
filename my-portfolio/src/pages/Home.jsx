@@ -1,63 +1,144 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import styles from './Home.module.css';
-import ShowcaseModel from '../components/ShowcaseModel'; // Import the new model component
+import ShowcaseModel from '../components/ShowcaseModel'; // 1. IMPORT THE MODEL
 
-const Home = ({ variants, transition }) => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
+const skills = {
+  languages: ['Java', 'Python', 'JavaScript (ES6+)', 'TypeScript', 'SQL', 'HTML5', 'CSS3'],
+  frameworks: ['React', 'Spring Boot', 'React Native', 'Vue.js', 'Nuxt.js', 'Next.js', 'Three,js', 'JQuery', 'Framer Motion'],
+  databases: ['PostgreSQL', 'MySQL', 'Oracle SQL', 'Firebase'],
+  tools: ['Git', 'Node.js', 'Vercel (CI/CD)', 'Docker (Familiarity)', 'Agile Methodologies', 'REST APIs', 'JSON', 'XML', 'JSx']
+};
+
+const About = ({ variants, transition }) => {
+  const categoryContainerVariant = {
+    hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.3, delayChildren: 0.5 },
-    },
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delayChildren: 0.3,
+        staggerChildren: 0.1
+      }
+    }
   };
 
-  const itemVariants = {
+  const listItemVariant = {
     hidden: { y: 20, opacity: 0 },
+    visible: { y: 0, opacity: 1, }
+  };
+
+  // 2. A NEW VARIANT FOR THE 3D MODEL CONTAINER
+  const modelVariant = {
+    hidden: { opacity: 0, scale: 0.8 },
     visible: {
-      y: 0,
       opacity: 1,
-      transition: { type: 'spring', stiffness: 100 },
-    },
+      scale: 1,
+      transition: {
+        duration: 0.7,
+        delay: 0.5 // Let it appear after the text
+      }
+    }
   };
 
   return (
-    // We apply the main container variants here to orchestrate the animation
     <motion.div
-      className={styles.homeContainer}
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
+      className={styles.aboutContainer}
+      initial="initial"
+      animate="in"
       exit="out"
+      variants={variants}
+      transition={transition}
     >
-      {/* This container for the text content no longer needs its own variants,
-          as the parent `homeContainer` is handling the stagger effect. */}
-      <div className={styles.content}>
-        <motion.h1 variants={itemVariants}>
-          Leonard Rabih Marida
-        </motion.h1>
+      <h1 className={styles.title}>About Me</h1>
 
-        <motion.p variants={itemVariants}>
-          Software Developer with 3+ years of experience building, deploying, and maintaining robust, high-performance web and mobile applications from concept to launch.
-        </motion.p>
-        <motion.div variants={itemVariants}>
-          <Link to="/projects" className={styles.ctaButton}>
-            View My Work
-          </Link>
+      <div className={styles.introContent}>
+        <motion.div
+          className={styles.imageContainer}
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+        >
+          <img src="/leo_image.jpg" alt="Leonard Rabih Marida" className={styles.profileImage} />
+        </motion.div>
+        <motion.div
+          className={styles.textContainer}
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 1.0 }}
+        >
+          <p>
+            Software Developer with 3+ years of experience designing and deploying scalable, high-performance web and mobile applications.
+            Skilled in modern frameworks, cloud deployment pipelines, and database-driven architectures, with proven success integrating AI and
+            automation to streamline workflows. Recognized for fast adaptability and strong problem-solving skills, consistently delivering
+            secure, user-focused solutions that drive measurable business impact.
+          </p>
         </motion.div>
       </div>
 
-      {/*
-        THIS IS THE NEW PART.
-        We place the 3D model container here, right after the text content.
-        We also apply the 'itemVariants' to it so it fades/slides in.
-      */}
-      <motion.div className={styles.modelContainer} variants={itemVariants}>
+      {/* 3. PLACE THE MODEL CONTAINER HERE */}
+      <motion.div
+        className={styles.modelContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={modelVariant}
+      >
         <ShowcaseModel />
       </motion.div>
+
+      <div className={styles.skillsSection}>
+        <h2 className={styles.skillsTitle}>My Technical Toolbox</h2>
+        <div className={styles.skillsGrid}>
+          {/* Languages */}
+          <motion.div
+            className={styles.skillCategory}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={categoryContainerVariant}
+          >
+            <h3>Languages</h3>
+            <ul>{skills.languages.map(skill => <motion.li key={skill} variants={listItemVariant}>{skill}</motion.li>)}</ul>
+          </motion.div>
+          {/* Frameworks */}
+          <motion.div
+            className={styles.skillCategory}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={categoryContainerVariant}
+          >
+            <h3>Frameworks & Libraries</h3>
+            <ul>{skills.frameworks.map(skill => <motion.li key={skill} variants={listItemVariant}>{skill}</motion.li>)}</ul>
+          </motion.div>
+          {/* Databases */}
+          <motion.div
+            className={styles.skillCategory}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={categoryContainerVariant}
+          >
+            <h3>Databases & Storage</h3>
+            <ul>{skills.databases.map(skill => <motion.li key={skill} variants={listItemVariant}>{skill}</motion.li>)}</ul>
+          </motion.div>
+          {/* Tools */}
+          <motion.div
+            className={styles.skillCategory}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={categoryContainerVariant}
+          >
+            <h3>Tools & Technologies</h3>
+            <ul>{skills.tools.map(skill => <motion.li key={skill} variants={listItemVariant}>{skill}</motion.li>)}</ul>
+          </motion.div>
+        </div>
+      </div>
     </motion.div>
   );
 };
 
-export default Home;
+export default About;

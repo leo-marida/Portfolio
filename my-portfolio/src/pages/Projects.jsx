@@ -6,108 +6,29 @@ import styles from "./Projects.module.css";
 // Project data now includes all projects from your resume, ordered strategically.
 const projectsData = [
   {
-    title: "Equipment Manager Mobile App",
+    title: "Personal Portfolio Website",
     description:
-      "Owned the full product lifecycle for over 3 years, taking the app from initial concept to launch to continuous, long-term maintenance for a local mechanic to track equipment inventory.",
-    technologies: [
-      "React Native",
-      "JavaScript",
-      "Firebase",
-      "Product Lifecycle Management",
-      "Application Performance Optimization",
-    ],
+      "Built and deployed a personal portfolio with CI/CD pipelines and interactive 3D graphics, attracting 500+ unique visitors within the first month. ",
+    technologies: ["React.js", "Three.js", "Framer Motion", "Vite", "Vercel (CI/CD)"],
     liveLink: "#",
-    githubLink: "https://github.com/leo-marida/Mechanic-App",
+    githubLink: "https://github.com/leo-marida/Portfolio",
   },
   {
-    title: "AI Road Tracking System",
+    title: "Full Stack Car Dealership Web App",
     description:
-      "Engineered a real-time multi-object tracking system by custom-training a YOLOv5 model on a Roboflow dataset and integrating it with a Norfair tracker",
-    technologies: [
-      "Supervised Learning",
-      "Deepsort",
-      "Python",
-      "Model Generalization",
-      "Norfair",
-    ],
-    liveLink: "#",
-    githubLink: "https://github.com/leo-marida/AI-Road-Tracking-System",
-  },
-  {
-    title: "Full stack developer at Greatech",
-    description:
-      "As a Full Stack Developer Intern, I elevated the Actifit.io platform by developing key front-end features in Nuxt.js, boosting mobile responsiveness by 25% and resolving over 15 UI bugs to enhance user engagement and overall application performance.",
-    technologies: [
-      "Nuxt.js",
-      "Vue.js",
-      "JavaScript",
-      "UI Bug Resolution",
-      "REST APIs",
-      "Mobile Responsiveness",
-    ],
-    liveLink: "actifit.io",
-    githubLink: "https://github.com/leo-marida/AI-Road-Tracking-System",
-  },
-  {
-    title: "Slova AI - Automation Agency Platform",
-    description:
-      "Architected a full-stack website for an AI automation agency, featuring a multi-niche service menu, and an interactive AI chatbot built with a custom backend workflow.",
-    technologies: [
-      "Next.js",
-      "React",
-      "Node.js",
-      "OpenAI API",
-      "Make.com",
-      "Vercel",
-    ],
-    liveLink: "https://slovaautomations.com", // <-- IMPORTANT: Replace with your final domain
-    githubLink: "https://github.com/leo-marida/Automation-agency", // <-- IMPORTANT: Replace with your actual GitHub repo link
-  },
-  {
-    title: "Full stack developer at IDS",
-    description:
-      "As a full stack developer intern, I developed a comprehensive event management web application using ASP.NET Core, Entity Framework, and Microsoft SQL Server to power a Web API for real-time management of events, members, and admin functionalities.",
-    technologies: [
-      "ASP.NET MVC",
-      "C#",
-      "Microsoft SQL Server",
-      ".NET Framework",
-      "Real-time Management",
-    ],
-    liveLink: "actifit.io",
-    githubLink: "",
-  },
-  {
-    title: "Travel Agency Platform",
-    description:
-      "Architected a full-stack, tripal-portal web application for users, admins, and service providers, enabling dynamic service listings and secure booking management.",
-    technologies: [
-      "React.js",
-      "Spring Boot",
-      "Java",
-      "PostgreSQL",
-      "REST APIs",
-      "Secure User Authentication",
-    ],
-    liveLink: "#", // Replace with your live demo link
-    githubLink: "https://github.com/leo-marida/Grand-Voyage", // Replace with your GitHub repo link
-  },
-  {
-    title: "Car Dealership Web Application",
-    description:
-      "Built a responsive, multi-form web application featuring user authentication, vehicle booking, and dynamic content updates with a smooth, single-page-like user experience.",
+      "Designed a car dealership platform with secure sign-in, vehicle booking, and async submissions, improving booking efficiency and user experience. ",
     technologies: ["PHP", "MySQL", "JavaScript", "AJAX", "HTML5", "CSS3"],
     liveLink: "#",
     githubLink: "https://github.com/leo-marida/SurgeMotors",
   },
   {
-    title: "Secure Password Manager",
+    title: "Full Stack Android Password Manager",
     description:
-      "Engineered a secure Android application for password management, supporting encrypted storage (AES-256), strong password generation, and user authentication.",
+      "Developed a secure Android app with AES-256 encryption and MySQL storage, protecting sensitive user data and strengthening trust in mobile security.",
     technologies: ["Java", "XML", "MySQL", "Android SDK"],
     liveLink: "#",
     githubLink: "https://github.com/leo-marida/SafePass",
-  },
+  }
 ];
 
 const Projects = ({ variants, transition }) => {

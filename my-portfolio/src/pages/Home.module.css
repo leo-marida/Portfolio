@@ -1,75 +1,125 @@
-/*
-  Change the layout to a column, stacking items vertically.
-  justify-content: center will center them vertically in the available space.
-*/
-.homeContainer {
-  display: flex;
-  flex-direction: column; /* This is the key change */
-  align-items: center;
-  justify-content: center;
-  min-height: calc(100vh - 150px);
-  padding: 2rem 5%;
+.aboutContainer {
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 2rem;
+}
+
+.title {
   text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-color);
 }
 
-/* This container no longer needs special positioning */
-.content {
-  max-width: 650px; /* Constrain the width of the text */
+.introContent {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 0rem; /* Increased margin to create space for the skills section */
 }
 
-/* 
-  NEW STYLES FOR THE MODEL CONTAINER
-  This is crucial. A canvas in the normal page flow needs an explicit size.
-*/
+.imageContainer {
+  flex-shrink: 0;
+}
+
+.profileImage {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--border-color);
+  box-shadow: 0 0 20px var(--primary-glow);
+}
+
+.textContainer p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  
+}
+
+.textContainer p:last-child {
+  margin-bottom: 0;
+}
+
 .modelContainer {
   width: 100%;
-  max-width: 600px; /* Match the content width for alignment */
-  height: 450px;
-  margin-top: 2rem; /* Add some space between the button and the model */
-  cursor: grab; /* Change the cursor to indicate it's interactive */
+  max-width: 700px; /* Make it a bit wider than on the home page if you like */
+  height: 450px;    /* A fixed height is reliable */
+  margin: -2.2rem auto 0rem auto; /* Center it and add space below it */
+  cursor: grab;
 }
 
 .modelContainer:active {
-  cursor: grabbing; /* Change cursor on click-and-drag */
+  cursor: grabbing;
 }
 
+/* --- NEW STYLES FOR THE SKILLS SECTION --- */
 
-/* All your previous content styles are still valid! */
-.content h1 {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+.skillsSection {
+  text-align: center;
+}
+
+.skillsTitle {
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
   color: var(--text-color);
-  margin-bottom: 0.5rem;
 }
 
-.content h2 {
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2.5rem;
+  text-align: left;
+}
+
+.skillCategory {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1.5rem;
+  backdrop-filter: blur(5px);
+}
+
+.skillCategory h3 {
+  font-size: 1.4rem;
   color: var(--primary-glow);
-  margin-bottom: 1.5rem;
-  font-weight: 400;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
 }
 
-.content p {
-  font-size: clamp(1rem, 2vw, 1.2rem);
+.skillCategory ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skillCategory li {
   color: var(--text-muted);
-  max-width: 600px;
-  margin: 0 auto 2rem auto;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
 }
 
-.ctaButton {
-  display: inline-block;
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--bg-color);
-  background-color: var(--primary-glow);
-  border: 2px solid var(--primary-glow);
-  border-radius: 5px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
-}
-
-.ctaButton:hover {
-  background-color: transparent;
+/* Creates the custom bullet point */
+.skillCategory li::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
   color: var(--primary-glow);
+  font-size: 0.8rem;
+  top: 5px;
+}
+
+
+@media (max-width: 768px) {
+  .introContent {
+    flex-direction: column;
+    text-align: center;
+  }
+  .profileImage {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 2rem;
+  }
 }
